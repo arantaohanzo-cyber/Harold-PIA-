@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+:root {
+    --gold: #d6ae62;
+    --panel: #151515;
+}
+
+header {
+    background: #111;
+    padding: 22px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 30px;
+}
+
+/* HOME */
+
+.home {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.home-text {
+    flex: 1;
+}
+
+.home-text small {
+    color: var(--gold);
+    letter-spacing: 4px;
+}
+
+.home-text h1 {
+    font-size: clamp(42px, 6vw, 75px);
+    margin: 25px 0;
+    line-height: 1.1;
+}
+
+.home-text h1 span {
+    color: var(--gold);
+}
+
+.home-text p {
+    color: #aaa;
+    line-height: 1.9;
+    max-width: 550px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--gold);
+    transition: .3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+.outline {
+    background: transparent;
+    color: var(--gold);
+}
+
+/* PROFILE */
+
+.image-container {
+    width: 330px;
+    height: 430px;
+    padding: 8px;
+    border: 2px solid var(--gold);
+    border-radius: 15px;
+    flex-shrink: 0;
+}
+
+.profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 10px;
+}
+
+/* TITLES */
+
+.label {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 42px;
+    margin: 15px 0 30px;
+}
+
+h2 span {
+    color: var(--gold);
+}
+
+/* ABOUT */
+
+.about-box {
+    background: var(--panel);
+    padding: 40px;
+    border-left: 4px solid var(--gold);
+    color: #aaa;
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.skill-card {
+    background: var(--panel);
+    padding: 30px;
+    border: 1px solid #292929;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.number {
+    color: #666;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact-section {
+    background: var(--panel);
+}
+
+.contact-inner {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    background: #202020;
+    padding: 30px;
+    border: 1px solid #383838;
+}
+
+.contact-card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.contact-card a {
+    color: white;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-card a:hover {
+    color: var(--gold);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #050505;
+    color: #888;
+}
+
+footer span {
+    color: var(--gold);
+}
+
+/* MOBILE */
+
+@media(max-width: 750px) {
+
+    nav {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 60px;
+    }
+
+    .home-text p {
+        margin: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .image-container {
+        width: 250px;
+        height: 320px;
+    }
+
+    .skills-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">PORTFOLIO.</div>
+
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#skills">SKILLS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+</header>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+    <div class="home-text">
+
+        <small>WELCOME TO MY PORTFOLIO</small>
+
+        <h1>
+            Hello, I'm<br>
+            <span>Your Name</span>
+        </h1>
+
+        <p>
+            A reliable, responsible, and hardworking
+            individual who is passionate about learning,
+            improving skills, and achieving goals.
+            I always strive to give my best in every
+            opportunity.
+        </p>
+
+        <div class="buttons">
+            <a href="#about" class="btn">
+                DISCOVER MORE
+            </a>
+
+            <a href="#contact" class="btn outline">
+                CONTACT ME
+            </a>
+        </div>
+
+    </div>
+
+    <div class="image-container">
+        <img src="4852.jpg"
+             alt="My Profile Picture"
+             class="profile">
+    </div>
+
+</section>
+
+<!-- ABOUT ME -->
+
+<section id="about">
+
+    <div class="label">WHO I AM</div>
+
+    <h2>About <span>Me</span></h2>
+
+    <div class="about-box">
+        I am a reliable, responsible, and hardworking
+        individual who believes in dedication,
+        discipline, and continuous improvement.
+
+        I value time management and always try to
+        complete my responsibilities properly.
+
+        I enjoy learning new things, solving problems,
+        and gaining experiences that will help me
+        become a better and more capable individual.
+
+        My goal is to continue developing my abilities
+        and make the most of every opportunity.
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="label">MY ABILITIES</div>
+
+    <h2>My <span>Skills</span></h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="number">01</div>
+            <h3>Time Management</h3>
+            <p>
+                Organizing tasks and managing time
+                effectively to accomplish responsibilities.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="number">02</div>
+            <h3>Problem Solving</h3>
+            <p>
+                Finding practical solutions and
+                thinking carefully when facing challenges.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="number">03</div>
+            <h3>Reliable</h3>
+            <p>
+                Being dependable and making sure
+                assigned tasks are completed properly.
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <div class="number">04</div>
+            <h3>Responsible & Hardworking</h3>
+            <p>
+                Taking responsibilities seriously
+                and giving my best effort in every task.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+    <div class="contact-inner">
+
+        <div class="label">GET IN TOUCH</div>
+
+        <h2>Contact <span>Me</span></h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+                <h3>EMAIL ADDRESS</h3>
+
+                <a href="mailto:pharoldepit@gmail.com">
+                    pharoldepit@gmail.com
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <h3>PHONE NUMBER</h3>
+
+                <a href="tel:09508363092">
+                    09508363092
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>
+        © 2026 <span>Your Name</span>.
+        All Rights Reserved.
+    </p>
+</footer>
+
+</body>
+</html>
